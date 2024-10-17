@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preciscion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #d1eb74, #959ec7); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        #target, #counter {
+            font-size: 48px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        button {
+            background-color: #a72828;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button#stop {
+            background-color: #dc35c9;
+        }
+
+       
+        button:hover {
+            background-color: #218838;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);  
+            transform: scale(1.1); 
+        }
+
+        button#stop:hover {
+            background-color: #ad2885;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);  
+            transform: scale(1.1); 
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            #target, #counter {
+                font-size: 36px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+        .navbar {
+            background-color: rgba(213, 188, 188, 0.9);
+            padding: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #5f1c0b; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preciscion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        #target, #counter {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        button {
+            background-color: #2878a7;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button#stop {
+            background-color: #35dcb5;
+        }
+
+       
+        button:hover {
+            background-color: #20ea4c;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);  
+            transform: scale(1.1); 
+        }
+
+        button#stop:hover {
+            background-color: #c82333;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);  
+            transform: scale(1.1); 
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            #target, #counter {
+                font-size: 36px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ff7e5f; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Mahendra kumar Speed Check</h1>
+    <div id="target">Your time</div>
+    <div id="counter">Count</div>
+    <button id="start" >Start Timer</button>
+    <button id="stop" >Stop Timer</button>
+
+    <script>
+        let stopTime;          
+        let countdownTime;
+        let timerActive = false;  
+        let targetTime = 4000;
+        
+         function generateRandomCountdown() {
+            countdownTime = Math.floor(Math.random() * (10 - 2 + 1)) + 2; 
+            console.log("Random Countdown Time:", countdownTime); 
+        }
+
+       
+        function recordTime() {
+            if (timerActive) {
+                stopTime = Date.now();  
+                console.log("Stop Time:", stopTime);  
+            }
+        }
+
+ 
+        document.getElementById('stop').onclick = recordTime;
+
+   
+        function startTime() {
+            generateRandomCountdown(); 
+            stopTime = undefined;  
+            timerActive = true;    
+            document.getElementById('target').textContent = "Your time"; 
+            let startTimeValue = Date.now();  
+
+            for (let i = 0; i <= countdownTime; i++) {
+                setTimeout(() => {
+                    document.getElementById('counter').textContent = countdownTime - i;  
+                }, i * 1000);  
+            }
+
+            
+            setTimeout(() => {
+                if (!stopTime) {
+                    
+                    document.getElementById('target').textContent = "Too Slow!";
+                } else {
+                   
+                    const timeDifference = stopTime - (startTimeValue + targetTime);  
+                    document.getElementById('target').textContent = `Time was ${Math.abs(timeDifference)} ms`;
+                }
+                timerActive = false;  
+            }, targetTime);  
+        }
+
+        
+        document.getElementById('start').onclick = startTime;    </script>
+</body>
+</html>
+    
+        
+            
+        
+            
+            
+        
+    
+   
+   
+    
