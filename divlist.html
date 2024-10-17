@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mahendra kumar builds list with divs</title>
+	<style>
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			background-color: rgb(0, 0, 255);
+		}
+
+		.flex-container>div {
+			background-color: #f1f1f1;
+			margin: 10px;
+			padding: 20px;
+			font-size: 30px;
+		}
+
+		@media (max-width: 600px) {
+			.flex-container {
+				flex-direction: column;
+				background-color: rgb(128, 0, 15);
+			}
+		}
+		button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            font-size: 16px;
+            background-color: rgb(92, 128, 0);
+            color: white;
+        }
+		input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+	</style>
+</head>
+
+<body>
+	<h2>Mahendra kumar builds list with divs</h2>
+
+	<input type="text" id="inputItem" placeholder="Enter item here">
+	
+	<div class="flex-container" id="target">
+		<div class="divlist">row item 1</div>
+		<div class="divlist">row item 2</div>
+		<div class="divlist">row item 3</div>
+	</div>
+
+	<p> Press the button to create an new element of type div and then add it to the container.
+	</p>
+	<button onclick="addEnd()">Add end</button>
+	<button onclick="addFront()">Add front</button>
+	<button onclick="remove()">Remove</button>
+	<button onclick="swap()">Swap</button>
+
+	<script>
+		function addEnd() {
+			const inputValue = document.getElementById('inputItem').value;
+			if (inputValue) {
+				let element = document.createElement("div");
+				element.innerHTML = inputValue;
+				element.className = "divlist";
+
+				let container = document.getElementById('target');
+				container.appendChild(element);
+
+				document.getElementById('inputItem').value = '';
+			}
+			else {
+				alert("Please enter an item.");
+			}
+		}
+		function addFront() {
+			const inputValue = document.getElementById('inputItem').value;
+			if (inputValue) {
+				let element = document.createElement("div");
+				element.innerHTML = inputValue;
+				element.className = "divlist";
+
+				let container = document.getElementById('target');
+				container.insertBefore(element, container.firstChild);
+
+				document.getElementById('inputItem').value = '';
+			}
+			else {
+				alert("Please enter an item.");
+			}
+		}
+
+		function remove() {
+			let divListItems = document.getElementsByClassName("divlist");
+			let length = divListItems.length;
+
+			if (length > 0) {
+				let middleIndex = Math.floor(length / 2);
+				divListItems[middleIndex].remove();
+			}
+			else {
+				alert("No items to remove.");
+			}
+		}
+		
+		function swap() {
+			let divListItems = document.getElementsByClassName("divlist");
+			let length = divListItems.length;
+			if (length > 1) {
+				let index1 = Math.floor(Math.random() * length);
+				let index2 = Math.floor(Math.random() * length);
+				while (index1 === index2) {
+					index2 = Math.floor(Math.random() * length);
+				}
+				let item1 = divListItems[index1];
+				let item2 = divListItems[index2];
+				let parent = item1.parentNode;
+				let next1 = item1.nextSibling === item2 ? item1 : item1.nextSibling;
+				let next2 = item2.nextSibling === item1 ? item2 : item2.nextSibling;
+				parent.insertBefore(item2, next1);
+				parent.insertBefore(item1, next2);
+			}
+		}
+	</script>
+</body>
+
+</html>
